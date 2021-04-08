@@ -12,7 +12,6 @@ for _ in range(N):
   I = list(map(int, input().split(' ')))
   index_queue = deque([i for i in range(len(I))])
   values_queue = deque([I[i] for i in range(len(I))])
-  # print(index_queue, values_queue)
   while values_queue:
     if max(values_queue) > values_queue[0]:
       values_queue.append(values_queue.popleft())
