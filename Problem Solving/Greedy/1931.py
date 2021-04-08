@@ -1,22 +1,20 @@
 # 그리디 - 회의실 배정
-
-N = int(input())
+import sys
+N = int(sys.stdin.readline())
 
 meet_list = []
-for _ in range(N):
-  meet_list.append(list(map(int, input().split(' '))))
-
-count = 0
-end_meet = meet_list[count][1]
-start_meet = meet_list[count+1][0]
 answer = 1
-while count != len(meet_list):
-  # print(end_meet, start_meet)
-  if end_meet <= start_meet:
-    end_meet = meet_list[count+1][1]
+for _ in range(N):
+  meet_list.append(list(map(int, sys.stdin.readline().split(' '))))
+
+meet_list = sorted(meet_list, key=lambda x: (x[1], x[0]))
+start, end = meet_list.pop(0)
+for meet in meet_list:
+  if end <= meet[0]:
+    end = meet[1]
     answer += 1
-  count += 1
-  if count+1 < len(meet_list):
-    start_meet = meet_list[count+1][0]    
+  elif meet[1] <= start:
+    start = meet[0]
+    answer += 1
 
 print(answer)
