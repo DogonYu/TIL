@@ -11,7 +11,7 @@ for num in set_nums:
   if max_num < nums.count(num):
     max_num = nums.count(num)
 if len(min_list) == 1:
-  print(nums[0])
+  print(nums[0]) 
 elif min_list.count(max_num) == len(min_list):
   print(nums[1])
 else:
