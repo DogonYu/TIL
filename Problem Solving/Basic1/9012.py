@@ -1,3 +1,5 @@
+# 기초 - 괄호
+
 N = int(input())
 ps = [input() for i in range(N)]
 

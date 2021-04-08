@@ -1,3 +1,5 @@
+# 기초 - 큐
+
 import sys
 N = int(sys.stdin.readline())
 
