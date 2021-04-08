@@ -10,7 +10,7 @@ Python 기준으로 보통 1초에 2천만번 연산한다고 가정
  - N의 범위 100,000 : O(NlogN)
  - N의 범위 10,000,000 : O(N)
  
-### DFS (깊이 우선 탐색)
+### [DFS (깊이 우선 탐색)](https://github.com/DogonYu/algorithm/blob/master/Algorithm/dfs%20bfs/DFS.py)
 
  - 인접 리스트 : O(V + E)
  - 인접 행렬 : O(V^2)
@@ -20,7 +20,7 @@ Python 기준으로 보통 1초에 2천만번 연산한다고 가정
 2. 스택의 촤상단 노드에 방문하지 않은 인접한 노드가 하나라도 있으면 그 노드를 스택에 넣고 방문 후 방문하지 않은 인접 노드가 없으면 스택에서 최상단 노드를 꺼냄
 3. 더 이상 2번의 과정을 수행할 수 없을 때까지 반복
 
-### BFS (너비 우선 탐색)
+### [BFS (너비 우선 탐색)](https://github.com/DogonYu/algorithm/blob/master/Algorithm/dfs%20bfs/BFS.py)
 
  - 인접 리스트 : O(V + E)
  - 인접 행렬 : O(V^2)
