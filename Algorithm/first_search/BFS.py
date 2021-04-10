@@ -12,7 +12,7 @@ def bfs(graph, start, visited):
     v = queue.popleft()
     print(v, end=' ')
     # 아직 방문하지 않은 인접한 원소들을 큐에 삽입
-    for i in graph[v]:
+    for i in sorted(graph[v]):
       if not visited[i]:
         queue.append(i)
         visited[i] = True
