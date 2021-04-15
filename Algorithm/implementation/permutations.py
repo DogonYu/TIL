@@ -1,16 +1,15 @@
 # 중복되지 않는 순열
-def permutation(arr, size, ele):
-    
-    if len(ele) == size:
-        result.append(ele[:])
+def permutation(arr, size, used):
+    if len(used) == size:
+        result.append(used[:])
         return
     
     for i in range(len(arr)):
-        ele.append(arr[i])
+        used.append(arr[i])
         temp = arr[:]
         temp.remove(arr[i])
-        permutation(temp, size, ele)
-        ele.pop()
+        permutation(temp, size, used)
+        used.pop()
 
 
 result = []
