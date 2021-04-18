@@ -1,3 +1,5 @@
+# BFS - 미로 탐색
+
 import sys
 from collections import deque
 
