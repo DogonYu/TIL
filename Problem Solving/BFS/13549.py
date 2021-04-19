@@ -4,6 +4,8 @@
 * 2를 별도의 간선으로 생각하지 않고, +1이나 -1에 의한 좌표를 큐에 넣을 때 그 좌표의 2의 거듭제곱 배인 좌표들을 전부 큐에 넣는 방법
 '''
 
+# BFS - 숨바꼭질 3
+
 import sys
 from collections import deque
 
