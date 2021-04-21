@@ -14,7 +14,5 @@ answer = 0
 for i in range(N):
   if lope_list[i] * (i+1) > answer:
     answer = lope_list[i] * (i+1)
-  else:
-    answer = answer
 
 print(answer)

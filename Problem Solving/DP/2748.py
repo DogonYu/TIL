@@ -1,16 +1,13 @@
-# DP - 피보나치 수 2
+# 동적 프로그래밍 - 피보나치 수 2
 
-fi = [0 for _ in range(91)]
+import sys
 
-def fibo(num):
-  if num <= 1:
-    fi[num] = num
+N = int(sys.stdin.readline())
+dp = [0] * 91
+dp[1] = 1
+dp[2] = 1
 
-  elif fi[num] == 0:
-    fi[num] = fibo(num-1) + fibo(num-2)
-    
-  return fi[num]
+for i in range(3, N+1):
+  dp[i] = dp[i-1] + dp[i-2]
 
-num = int(input())
-
-print(fibo(num))
+print(dp[N])
