@@ -1,3 +1,5 @@
+# 완전탐색 - 사탕 게임
+
 import sys
 
 def check(x, y):
