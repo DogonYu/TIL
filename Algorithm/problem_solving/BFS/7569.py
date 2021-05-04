@@ -3,17 +3,6 @@
 import sys
 from collections import deque
 
-def bfs():
-  while queue:
-    z, x, y = queue.popleft()
-    for dz, dx, dy in (1, 0, 0), (-1, 0, 0), (0, 1, 0), (0, -1, 0), (0, 0, 1), (0, 0, -1):
-      nz, nx, ny = z + dz, x + dx, y + dy
-      if 0 <= nz < H and 0 <= nx < M and 0 <= ny < N:
-        if board[nz][nx][ny] == 0:
-          queue.append((nz, nx, ny))
-          board[nz][nx][ny] = board[z][x][y] + 1
-  return board[z][x][y] - 1
-
 N, M, H = map(int, sys.stdin.readline().strip().split(' '))
 board = []
 queue = deque()
@@ -27,6 +16,19 @@ for i in range(H):
     for k in range(N):
       if board[i][j][k] == 1:
         queue.append((i, j, k))
+
+def bfs():
+  answer = 0
+  while queue:
+    z, x, y = queue.popleft()
+    for dz, dx, dy in (1, 0, 0), (-1, 0, 0), (0, 1, 0), (0, -1, 0), (0, 0, 1), (0, 0, -1):
+      nz, nx, ny = z + dz, x + dx, y + dy
+      if 0 <= nz < H and 0 <= nx < M and 0 <= ny < N:
+        if board[nz][nx][ny] == 0:
+          queue.append((nz, nx, ny))
+          board[nz][nx][ny] = board[z][x][y] + 1
+          answer = board[nz][nx][ny] - 1
+  return answer
 
 result = bfs()
 for i in range(H):
